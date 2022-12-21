@@ -1,0 +1,48 @@
+<html>
+    <body>
+
+<h1 style="color:red">FORMULARIO PARA RECOMENDAR CATEGORÍAS</h1>
+
+        <form method='post'>
+            {% csrf_token %}
+            <ul>
+
+                    
+                    <label for="Project_Name ">Project Name </label> 
+                    <input name='Project_Name' type="text" id="Project_Name1" value="" 
+                    <br><br>
+                    <label for="Brand_or_Product ">Brand_or_Product: </label>
+                    <select>
+                        <option value="opcion1">Opción 1</option>
+                        <option value="opcion2">Opción 2</option>
+                        <option value="opcion3">Opción 3</option>
+                    </select>
+
+                    <br>
+                    <label for="GT_Code ">GT Code: </label> 
+                    <input name='GT_Code' type="text" id="GT_Code1" value="" 
+
+                    <br><br>
+                    <label for="url ">LISTA DE URLs: </label> 
+                    <input name='url' type="text" id="url1" value="" 
+
+ 
+            </ul>
+            <br><br>
+            <input type="submit" name="Submit"> 
+            
+            {% if 'cat' in urls %}
+                
+                <p style="color:green;"> {{ respuesta }} </p>
+                <p style="color:blue;"> {{ data }} </p>
+            <!--
+                <p>{{urls}}, {{ tipo }}</p>
+            <!-->
+            {% else %}
+                <label style="color:red;"> {{ error }} </label>
+
+            {% endif %}
+        </form>
+    </body>
+</html>
+
